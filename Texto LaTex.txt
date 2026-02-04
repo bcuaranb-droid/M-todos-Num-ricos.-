@@ -1,0 +1,542 @@
+\documentclass[10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[letterpaper, margin=2cm]{geometry}
+%opening
+\title{Guia de LaTex}
+\author{Bryan Stiven Cuaran Belalcazar}
+
+\usepackage{hyperref}
+
+\begin{document}
+	\begin{titlepage}
+		\centering
+		
+		{\Large \textbf{Universidad Nacional de Colombia}\par}
+		\vspace{0.5cm}
+		{\large Facultad de Ingeniería\par}
+		\vspace{2cm}
+		
+		{\LARGE \textbf{Asignatura: Métodos Numéricos}\par}
+		\vspace{1.5cm}
+		
+		{\Large \textbf{Trabajo: Introducción a LaTeX}\par}
+		\vfill
+		
+		{\large \textbf{Bryan Stiven Cuaran Belalcázar}\par}
+		{\large Estudiante de Ingeniería Mecánica\par}
+		
+		\vfill
+		
+		{\large Bogotá D.C.\par}
+		{\large \today\par}
+	\end{titlepage}
+	
+\newpage
+\tableofcontents
+\newpage
+\section{¿Qué es LaTeX?}
+
+LaTeX{} es un \textbf{sistema de composición de textos}, especialmente usado para crear documentos bien estructurados, profesionales y con excelente calidad tipográfica.
+
+En lugar de escribir directamente como en un procesador de texto tradicional (por ejemplo Word), en LaTeX{} se escribe un documento mediante \textbf{comandos}. La mayoría de estos comandos provienen del lenguaje TeX{}, el cual se encarga de interpretar las instrucciones y transformar el contenido en un documento final (generalmente en formato PDF).
+
+\subsection{Formas de usar LaTeX}
+
+Existen varias maneras de trabajar con LaTeX{}:
+
+\begin{itemize}
+	\item Plataformas en línea que compilan el documento automáticamente.
+	\item Programas instalados en el computador, donde uno escribe el código y luego compila el documento.
+\end{itemize}
+
+En mi caso, aprendí utilizando la aplicación \textbf{TeXstudio}, ya que permite escribir el código de manera organizada y compilar el documento desde el mismo entorno.
+
+\subsection{Creación del primer documento}
+
+Una vez instalado TeXstudio, el siguiente paso es abrir un documento nuevo. Para facilitar el inicio, se puede crear el archivo utilizando una \textbf{plantilla}, ya que esta incluye la estructura básica necesaria para que el documento compile correctamente.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Imagenes/1}
+	\caption{}
+	\label{fig:1}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Imagenes/2}
+	\caption{}
+	\label{fig:2}
+\end{figure}
+Una vez entendido esto, podemos iniciar la creación de nuestros documentos en LaTeX{}.
+
+En un archivo típico existen dos partes principales:
+
+\begin{itemize}
+	\item El \textbf{preámbulo}, donde se escriben las instrucciones de formato del documento.
+	\item El \textbf{cuerpo del documento}, donde se escribe el contenido que aparecerá en el PDF final.
+\end{itemize}
+
+\subsection{El preámbulo}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Imagenes/3}
+	\caption{}
+	\label{fig:3}
+\end{figure}
+
+
+El preámbulo es la sección donde se define la configuración general del documento. En esta parte se incluyen elementos como:
+
+\begin{itemize}
+	\item El tipo de documento (artículo, reporte, libro, etc.).
+	\item El idioma.
+	\item Los paquetes necesarios para agregar funcionalidades (por ejemplo, imágenes, tablas, símbolos matemáticos, etc.).
+	\item La configuración de márgenes, estilo de letra, encabezados, entre otros.
+\end{itemize}
+
+\subsection{El entorno o cuerpo del documento}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Imagenes/4}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+
+
+El entorno corresponde a la parte donde se escribe el contenido del documento: títulos, párrafos, listas, tablas, ecuaciones e imágenes. Esta sección inicia cuando se escribe el comando:
+
+\begin{verbatim}
+	\begin{document}
+	\end{verbatim}
+	
+	y termina cuando se cierra con:
+	
+	\begin{verbatim}
+	\end{document}
+\end{verbatim}
+\subsection{Primeros comandos básicos}
+
+A continuación comenzamos a trabajar usando comandos. Estos los abordaré más adelante con mayor detalle, pero por ahora utilizaremos los que aparecen por defecto en una plantilla básica.
+
+Al iniciar con los comandos, es importante recalcar que en LaTeX{} \textbf{todo lo que se incluya dentro de llaves} \verb|{ }| estará asociado a la instrucción o formato que se esté aplicando.
+
+\subsection{Configuración del idioma}
+
+En este caso, necesitamos usar un paquete para configurar el idioma del documento. Para ello utilizamos el comando:
+
+\begin{verbatim}
+	\usepackage[spanish]{babel}
+\end{verbatim}
+
+Este paquete se usa para que el documento trabaje en español, ajustando aspectos como:
+\begin{itemize}
+	\item La separación silábica (división de palabras al final de línea).
+	\item Los nombres automáticos (por ejemplo: ``Contenido'', ``Figura'', ``Tabla'').
+	\item Algunas reglas tipográficas propias del idioma.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{../Imagenes/7}
+		\caption{}
+		\label{fig:7}
+	\end{figure}
+	
+\end{itemize}
+\section{Comandos importantes y fundamentos para usar LaTeX}
+
+En esta parte incluyo los comandos más importantes que fui aprendiendo durante la creación de documentos en LaTeX{}. La idea es tener una base sólida para escribir documentos bien estructurados, especialmente si el objetivo es producir trabajos académicos o técnicos.
+
+\subsection{Estructura mínima de un documento}
+
+Todo documento en LaTeX{} se basa en una estructura general, donde se separa el \textbf{preámbulo} del \textbf{cuerpo del documento}. Un ejemplo básico sería:
+
+\begin{verbatim}
+	\documentclass{article}
+	
+	\usepackage[spanish]{babel}
+	
+	\begin{document}
+		
+		Hola mundo.
+		
+	\end{document}
+\end{verbatim}
+
+En este ejemplo:
+
+\begin{itemize}
+	\item \verb|\documentclass{article}| define el tipo de documento.
+	\item \verb|\usepackage[spanish]{babel}| configura el idioma.
+	\item \verb|\begin{document}| inicia el contenido.
+		\item \verb|\end{document}| cierra el documento.
+\end{itemize}
+
+\subsection{Tipos de documento: \texttt{\textbackslash documentclass}}
+
+El comando \verb|\documentclass| es uno de los más importantes, ya que define el estilo general del documento. Los tipos más comunes son:
+
+\begin{itemize}
+	\item \verb|article|: artículos, tareas, documentos cortos.
+	\item \verb|report|: reportes, trabajos más largos, con capítulos.
+	\item \verb|book|: libros, tesis extensas.
+\end{itemize}
+
+También se pueden agregar opciones, por ejemplo:
+
+\begin{verbatim}
+	\documentclass[12pt]{article}
+\end{verbatim}
+
+Donde \verb|12pt| define el tamaño de letra base.
+
+\subsection{Paquetes: \texttt{\textbackslash usepackage}}
+
+Los paquetes en LaTeX{} funcionan como extensiones: permiten agregar herramientas y funciones que el sistema base no trae.
+
+La sintaxis general es:
+
+\begin{verbatim}
+	\usepackage{paquete}
+\end{verbatim}
+
+Y también se puede incluir opciones:
+
+\begin{verbatim}
+	\usepackage[opcion1,opcion2]{paquete}
+\end{verbatim}
+
+En mi experiencia, el uso de paquetes es lo que realmente hace a LaTeX{} potente, ya que permite trabajar con imágenes, tablas complejas, ecuaciones, estilos y muchas funciones más.
+(asi que sí, ta potente)
+
+\subsection{Paquetes recomendados para un documento típico}
+
+En documentos académicos comunes, los paquetes más útiles suelen ser:
+
+\begin{itemize}
+	\item \verb|babel|: idioma.
+	\item \verb|geometry|: márgenes.
+	\item \verb|graphicx|: imágenes.
+	\item \verb|amsmath|: ecuaciones avanzadas.
+	\item \verb|amssymb|: símbolos matemáticos.
+	\item \verb|hyperref|: enlaces y referencias clicables.
+	\item \verb|float|: mejor control de figuras.
+\end{itemize}
+
+Un ejemplo de preámbulo típico sería:
+
+\begin{verbatim}
+	\usepackage[spanish]{babel}
+	\usepackage[a4paper, margin=2.5cm]{geometry}
+	\usepackage{graphicx}
+	\usepackage{amsmath, amssymb}
+	\usepackage{float}
+	\usepackage{hyperref}
+\end{verbatim}
+
+\subsection{Comentarios}
+
+En LaTeX{}, cualquier texto que esté después del símbolo \verb|%| será ignorado por el compilador.
+
+Ejemplo:
+
+\begin{verbatim}
+	Esto se verá en el documento. % Esto es un comentario
+\end{verbatim}
+
+Esto es útil para:
+\begin{itemize}
+	\item Dejar notas personales.
+	\item Desactivar temporalmente partes del documento.
+	\item Documentar por qué se usan ciertos paquetes.
+\end{itemize}
+
+\subsection{Títulos y secciones}
+
+Una de las ventajas más grandes de LaTeX{} es que permite estructurar documentos con secciones de forma automática, manteniendo una numeración ordenada.
+
+Los comandos principales son:
+
+\begin{itemize}
+	\item \verb|\section{...}|
+	\item \verb|\subsection{...}|
+	\item \verb|\subsubsection{...}|
+\end{itemize}
+
+Ejemplo:
+
+\begin{verbatim}
+	\section{Introducción}
+	\subsection{Objetivo}
+	\subsubsection{Objetivo general}
+\end{verbatim}
+
+Además existe el formato sin numeración:
+
+\begin{verbatim}
+	\section*{Agradecimientos}
+\end{verbatim}
+
+\subsection{Portada: título, autor y fecha}
+
+En un documento tipo \verb|article|, se puede crear una portada simple usando:
+
+\begin{verbatim}
+	\title{Título del documento}
+	\author{Nombre del autor}
+	\date{\today}
+	\maketitle
+\end{verbatim}
+
+Esto permite generar automáticamente un encabezado formal.
+
+\subsection{Negrita, cursiva y subrayado}
+
+Para aplicar formato al texto se usan comandos específicos:
+
+\begin{itemize}
+	\item Negrita: \verb|\textbf{texto}|
+	\item Cursiva: \verb|\textit{texto}|
+	\item Subrayado: \verb|\underline{texto}|
+\end{itemize}
+
+Ejemplo:
+
+\begin{verbatim}
+	Este texto está en \textbf{negrita} y este en \textit{cursiva}.
+\end{verbatim}
+
+\subsection{Saltos de línea y párrafos}
+
+En LaTeX{}, un salto de línea no se hace simplemente presionando Enter una vez. Lo normal es:
+
+\begin{itemize}
+	\item Para crear un nuevo párrafo: dejar una línea en blanco.
+	\item Para forzar un salto de línea: usar \verb|\\| (aunque no se recomienda abusar).
+\end{itemize}
+
+Ejemplo:
+
+\begin{verbatim}
+	Este es un párrafo.
+	
+	Este es otro párrafo.
+\end{verbatim}
+
+\subsection{Listas}
+
+Las listas son fundamentales para organizar información.
+
+\subsubsection{Lista con viñetas: \texttt{itemize}}
+
+\begin{verbatim}
+	\begin{itemize}
+		\item Primer punto
+		\item Segundo punto
+	\end{itemize}
+\end{verbatim}
+
+\subsubsection{Lista numerada: \texttt{enumerate}}
+
+\begin{verbatim}
+	\begin{enumerate}
+		\item Paso 1
+		\item Paso 2
+	\end{enumerate}
+\end{verbatim}
+
+\subsubsection{Lista descriptiva: \texttt{description}}
+
+\begin{verbatim}
+	\begin{description}
+		\item[TeX] Lenguaje base.
+		\item[LaTeX] Sistema de composición basado en TeX.
+	\end{description}
+\end{verbatim}
+
+\subsection{Texto monoespaciado y comandos dentro del texto}
+
+Cuando se quiere mostrar un comando dentro del texto, se usa:
+
+\begin{itemize}
+	\item \verb|\verb|: para fragmentos cortos.
+	\item \verb|verbatim|: para bloques largos.
+\end{itemize}
+
+Ejemplo:
+
+\begin{verbatim}
+	El comando \verb|\section{...}| crea una sección.
+\end{verbatim}
+
+\subsection{Alineación de texto}
+
+Aunque en documentos académicos lo normal es texto justificado, LaTeX{} permite controlar alineación.
+
+\begin{itemize}
+	\item Centrado: \verb|\begin{center} ... \end{center}|
+	\item Alineado a la izquierda: \verb|\begin{flushleft} ... \end{flushleft}|
+	\item Alineado a la derecha: \verb|\begin{flushright} ... \end{flushright}|
+\end{itemize}
+
+\subsection{Inserción de imágenes}
+
+La inserción de imágenes se realiza con el paquete \verb|graphicx|.
+
+El formato típico es:
+
+\begin{verbatim}
+	\usepackage{graphicx}
+\end{verbatim}
+
+y luego en el documento:
+
+\begin{verbatim}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{imagenes/figura1.png}
+		\caption{Descripción de la imagen}
+		\label{fig:figura1}
+	\end{figure}
+\end{verbatim}
+
+
+\subsection{Tablas}
+
+Las tablas en LaTeX{} se construyen con el entorno \verb|tabular|. Un ejemplo básico sería:
+
+\begin{verbatim}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			A & B & C \\
+			\hline
+			1 & 2 & 3 \\
+			\hline
+		\end{tabular}
+		\caption{Ejemplo de tabla}
+	\end{table}
+\end{verbatim}
+
+Donde:
+
+\begin{itemize}
+	\item \verb|c| indica columna centrada.
+	\item \verb!|! crea líneas verticales.
+	\item \verb|\hline| crea líneas horizontales.
+\end{itemize}
+
+\subsection{Ecuaciones matemáticas}
+
+Una de las razones principales por las que LaTeX{} es tan usado en ingeniería, física y matemáticas es la facilidad para escribir ecuaciones.
+
+\subsubsection{Ecuaciones en línea}
+
+Ejemplo:
+
+\begin{verbatim}
+	La ecuación $F = ma$ es fundamental en mecánica.
+\end{verbatim}
+
+\subsubsection{Ecuaciones centradas}
+
+Ejemplo:
+
+\begin{verbatim}
+	\[F = ma\]
+\end{verbatim}
+
+\subsubsection{Ecuaciones numeradas}
+
+Ejemplo:
+
+\begin{verbatim}
+	\begin{equation}
+		F = ma
+	\end{equation}
+\end{verbatim}
+
+\subsubsection{Ecuaciones con varias líneas}
+
+Usando el paquete \verb|amsmath| se puede usar:
+
+\begin{verbatim}
+	\begin{align}
+		a &= b + c \\
+		d &= e - f
+	\end{align}
+\end{verbatim}
+
+\subsection{Símbolos matemáticos frecuentes}
+
+Algunos símbolos comunes en documentos técnicos son:
+
+\begin{itemize}
+	\item Fracciones: \verb|\frac{a}{b}|
+	\item Raíz: \verb|\sqrt{x}|
+	\item Sumatoria: \verb|\sum_{i=1}^{n}|
+	\item Integral: \verb|\int_{a}^{b}|
+	\item Grados: \verb|^\circ|
+\end{itemize}
+
+\subsection{Referencias cruzadas}
+
+LaTeX{} permite hacer referencias automáticas a secciones, figuras, tablas o ecuaciones, lo cual es muy útil en documentos largos.
+
+Para esto se usa:
+
+\begin{itemize}
+	\item \verb|\label{...}| para marcar un elemento.
+	\item \verb|\ref{...}| para referenciarlo.
+\end{itemize}
+
+Ejemplo:
+
+\begin{verbatim}
+	\section{Marco teórico}
+	\label{sec:marco}
+	
+	Como se explicó en la sección \ref{sec:marco}, ...
+\end{verbatim}
+
+\subsection{Tabla de contenido}
+
+Para generar una tabla de contenido automática se usa:
+
+\begin{verbatim}
+	\tableofcontents
+\end{verbatim}
+
+Esta se actualiza automáticamente cada vez que se compila el documento.
+
+\subsection{Enlaces y navegación}
+
+El paquete \verb|hyperref| permite que el PDF tenga enlaces clicables.
+
+Ejemplo:
+
+\begin{verbatim}
+	\usepackage{hyperref}
+\end{verbatim}
+
+Esto mejora la navegación, especialmente cuando el documento tiene índice, referencias o enlaces web.
+
+\subsection{Errores comunes al iniciar}
+
+Durante el aprendizaje, algunos errores comunes que encontré fueron:
+
+\begin{itemize}
+	\item Olvidar cerrar llaves \verb|{ }| o entornos \verb|\begin| y \verb|\end|.
+	\item No incluir paquetes necesarios (por ejemplo, usar imágenes sin \verb|graphicx|).
+	\item Escribir comandos mal (por ejemplo: \verb|\section| sin llaves).
+\end{itemize}
+
+Una ventaja de LaTeX{} es que los errores suelen aparecer claramente en la consola de compilación, y poco a poco uno aprende a identificarlos.
+
+\subsection{Conclusión}
+
+En general, LaTeX{} se basa en escribir un documento estructurado con comandos. Aunque al inicio puede sentirse diferente a escribir en Word, con práctica se vuelve un sistema muy cómodo, especialmente cuando se trabaja con textos largos, matemáticas, tablas, figuras y documentos técnicos.
+Este documento lo realice como guia para mi y para otra personas que puedan necesitar un inicio rapido en este formato, como parte de la materia de Métodos Númericos.
+
+
+\end{document}
