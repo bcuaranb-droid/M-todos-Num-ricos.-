@@ -68,15 +68,18 @@ Lista sin orden
 
 ---
 
-🔗 Enlaces e Imágenes
+## 🔗 Enlaces e Imágenes
 Enlaces
 [GitHub](https://github.com)
 
 ---
 
-Imágenes
-![Imagen seria ]([URL_de_la_imagen]([https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo44zZa80wIuluo2n593TI1v0EygubQvVfJkEHQfGynQ&s](https://i.pinimg.com/564x/22/7f/c3/227fc3e9bb479ae4ff39cbf0dbf0dc21.jpg)))
+## Imágenes
 
+`![imagen seria](https://github.com/bcuaranb-droid/M-todos-Num-ricos.-/blob/main/1699682703670.png?raw=true)` 
+![imagen seria](https://github.com/bcuaranb-droid/M-todos-Num-ricos.-/blob/main/1699682703670.png?raw=true)
+
+donde el link de la imagen sea la direccion directa en formato Raw, en este caso la subi desde mi repositorio
 ---
 
 ## 💻 Código en Markdown
@@ -88,7 +91,6 @@ Usa el comando `git status`
 Bloques de código
 
 Se usan tres comillas invertidas.
-```bash
 git add .
 git commit -m "mensaje"
 git push
@@ -110,12 +112,12 @@ Puedes especificar el lenguaje para resaltado:
 | git status  | Ver estado del repositorio   |
 | git pull    | Actualizar repositorio       |
 | git push    | Subir cambios                |
-
+```
 ---
 
 ## ✅ Checklists (muy usado en GitHub)
-- [x] Tarea completada
-- [ ] Tarea pendiente
+- [x] Inscribir Métodos Númericos 
+- [ ] Pasar Métodos Númericos 
 
 ---
 
